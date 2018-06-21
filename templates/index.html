@@ -1,11 +1,35 @@
-{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Poet 2.0 - The Poetry Generator</title>
+  <meta name="description" content="Poet 2.0 - A Poetry Penerator">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" media="screen" href="/static/css/custom.css">
+</head>
+<body>
 
-{% block body %}
 
-<div class=" text-center z">
-        <h1> Poetry Generator </h1>
-        <p>Celebrating Poetry Day with a little help from technology</p>
-        <a style="box-shadow: none !important" type="button" class="btn btn-outline-light" href="/display">Generate Poem</a>
+
+
+<div id="particles-js"></div>
+
+<div class="text">
+	<h1 class="front_h1" style="font-weight:300;">Poet 2.0</h1>
+	<h2 class="front_h2">The Poetry Genorator</h2>
+	<p class="front-p" style="margin-top: 1em;">Celebrating Poetry Day with a little help from technology</p>
+	<button type="button" class="btn btn-light" style="margin: 0;"> <a style="box-shadow: none !important; text-decoration: none; color:black" href="/display">Generate Poem</a></button>
 </div>
 
-{% endblock %}
+
+
+<!-- scripts -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">  </script>
+<script src="/static/particles.js"></script>
+<script src="/static/js/app.js"></script>
+
+</body>
+</html>
+
+

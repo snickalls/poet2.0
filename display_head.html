@@ -2,28 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Cache-control" content="no-cache">
+  <title>Poet 2.0 - The Poetry Generator</title>
+  <meta name="description" content="Poet 2.0 - A Poetry Penerator">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-  <title>Poem Generator</title>
-
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
   <link rel="stylesheet" media="screen" href="/static/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Muli:200,300,400" rel="stylesheet">
+
 </head>
 
 <body>
 
-  <a style="box-shadow: none !important; margin-top: 15px; margin-left: 15px;" type="button" class="btn btn-outline-dark" href="/">Exit</a>
 
   <div class="window">
+    <button type="button" class="btn btn-light" id="new_poem_btn"><a style="box-shadow: none !important; text-decoration: none; color:black" href="/display">New Poem</a></button>
+
+
     <div class="titlebar">
 
       Poet 2.0 Output Window
       <!-- window title -->
     </div>
+        
     <div class="content">
               <div id="typedtext"></div>
       <!-- window content -->
+
     </div>
   </div>
 
@@ -36,3 +40,6 @@ setTimeout(function(){
 ,120000)
 </script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">  </script>
+
+
+<script>

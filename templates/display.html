@@ -2,28 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Cache-control" content="no-cache">
+  <title>Poet 2.0 - The Poetry Generator</title>
+  <meta name="description" content="Poet 2.0 - A Poetry Penerator">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-  <title>Poem Generator</title>
-
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
   <link rel="stylesheet" media="screen" href="/static/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Muli:200,300,400" rel="stylesheet">
+
 </head>
 
 <body>
 
-  <a style="box-shadow: none !important; margin-top: 15px; margin-left: 15px;" type="button" class="btn btn-outline-dark" href="/">Exit</a>
 
   <div class="window">
+    <button type="button" class="btn btn-light" id="new_poem_btn"><a style="box-shadow: none !important; text-decoration: none; color:black" href="/display">New Poem</a></button>
+
+
     <div class="titlebar">
 
       Poet 2.0 Output Window
       <!-- window title -->
     </div>
+        
     <div class="content">
               <div id="typedtext"></div>
       <!-- window content -->
+
     </div>
   </div>
 
@@ -36,4 +40,61 @@ setTimeout(function(){
 ,120000)
 </script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">  </script>
-<script src='static/js/6.js'></script></html>
+
+
+<script>// set up text to print, each item in array is new line
+var aText = new Array("Proof Of Fluidic Abstraction  ",
+"  ",
+" ",
+" An odor has responded outside the grape,   ",
+" a mixture of phlegm and body, a rescuing   ",
+" faucet that brings fear.   ",
+" Like deaths entangling with echoes.   ",
+" I'm the daughter to the root of immediate coat.   ",
+" With its forceful grow what is this language but a memory froze of its mists?  ",
+"  ",
+" Next to the compounding graves.   ",
+" There ought to be a defender of a solute perfume inheriting in a university.  ",
+"  ",
+" Continued and then grew in the modern office.   ",
+" For cluster was dilute and morally positive.   ",
+" There ought to be a mane of a rosy nature entertaining in a field.  ",
+"  ",
+" The reasons for my respect   ",
+" are flew in my eyeball of emerald.",
+);
+var iSpeed = 50; // time delay of print out
+var iIndex = 0; // start printing array at this posision
+var iArrLength = aText[0].length; // the length of the text array
+var iScrollAt = 30; // start scrolling up at this many lines
+
+var iTextPos = 0; // initialise text position
+var sContents = ''; // initialise contents variable
+var iRow; // initialise current row
+
+function typewriter()
+{
+ sContents =  ' ';
+ iRow = Math.max(0, iIndex-iScrollAt);
+ var destination = document.getElementById("typedtext");
+
+ while ( iRow < iIndex ) {
+  sContents += aText[iRow++] + '<br />';
+ }
+ destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+ if ( iTextPos++ == iArrLength ) {
+  iTextPos = 0;
+  iIndex++;
+  if ( iIndex != aText.length ) {
+   iArrLength = aText[iIndex].length;
+   setTimeout("typewriter()", 500);
+  }
+ } else {
+  setTimeout("typewriter()", iSpeed);
+ }
+}
+
+
+typewriter();
+
+</script>

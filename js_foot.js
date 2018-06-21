@@ -32,3 +32,5 @@ function typewriter()
 
 
 typewriter();
+
+</script>

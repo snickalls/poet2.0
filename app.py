@@ -264,17 +264,13 @@ def display():
 
 
 
-        print(split)
+        # print(split)
 
         file = open('this_poem.html', 'w')
         file.write(split)
 
         file.close()
 
-    with open('file_num.txt') as f:
-        for line in f:
-            file_num = line
-    print(type(file_num))
 
 
     prefix = '"'
@@ -287,64 +283,43 @@ def display():
 
         file.close()
     file.close()
-
-
-
-    with open('js_head.js', 'r') as src:
-        with open('static/js/' + str(file_num) + '.js', 'w') as typed:
-           for line in src:
-               string = str(line)
-               typed.write(string)
+    
+    with open('display_head.html', 'r') as src:
+        with open('templates/display.html', 'w') as typed:
+          for line in src:
+              string = str(line)
+              typed.write(string)
 
         file.close()
     file.close()
 
+    with open('js_head.js', 'r') as src:
+        with open('templates/display.html', 'a') as typed:
+          for line in src:
+              string = str(line)
+              typed.write(string)
+
+        file.close()
+    file.close()
+    
+
     with open('dest.html', 'r') as src:
-        with open('static/js/' + str(file_num) + '.js', 'a') as typed:
-           for line in src:
-               string = str(line)
-               typed.write(string)
+        with open('templates/display.html', 'a') as typed:
+          for line in src:
+              string = str(line)
+              typed.write(string)
 
         file.close()
     file.close()
 
     with open('js_foot.js', 'r') as src:
-        with open('static/js/' + str(file_num) + '.js', 'a') as typed:
-           for line in src:
-               string = str(line)
-               typed.write(string)
+        with open('templates/display.html', 'a') as typed:
+          for line in src:
+              string = str(line)
+              typed.write(string)
 
         file.close()
     file.close()
-
-    new_file_num = int(file_num)+1
-    
-    file = open('file_num.txt', 'w')
-    file.write(str(new_file_num))
-    file.close()
-
-
-    with open('display_head.html', 'r') as src:
-        with open('templates/display.html', 'w') as typed:
-           for line in src:
-               string = str(line)
-               typed.write(string)
-
-        file.close()
-    file.close()
-
-    print(file_num)
-
-    file = open('templates/display.html', 'a')
-    file.write('<script src=\'' + 'static/js/' + str(file_num) + '.js\'' + '></script></html>')
-
-    file.close()
-    
-    old_file = int(file_num)-1
-    
-    os.remove('static/js/' + str(old_file) + '.js') 
-
-
 
 
     return render_template('/display.html')

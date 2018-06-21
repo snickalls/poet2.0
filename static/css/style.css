@@ -1,13 +1,4 @@
-/* body {
 
-  font-size:30px;
-  margin: 10px 50px;
-  letter-spacing: 6px;
-  font-weight: bold;
-} */
-
-/* ©2015 Johannes Jakob
-   Made with <3 in Germany */
 
 body {
   background: #fff;
@@ -165,3 +156,18 @@ h3 {
 }
 
 /* content END */
+
+ 
+
+#new_poem_btn {
+  
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}  
+
+.window {
+  position: relative;
+}
