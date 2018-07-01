@@ -1,9 +1,27 @@
+html,body,div,span,object,iframe,h2,h3,h4,h5,h6,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+li{list-style:none}
 
+html,body{
+	width:100%;
+	height:100%;
+	background:#fff;
+	color: #fff;
+}
 
-body {
-  background: #fff;
-  color: #fff;
-  font-family: HelveticaNeue, 'Helvetica Neue', 'Lucida Grande', Arial, sans-serif;
+html{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /* window BEGIN */
@@ -18,15 +36,18 @@ span {
 }
 
 .window {
+ 
   background: rgba(0, 0, 0, 0.85);
-  width: 50vw;
-  height: 75vh;
+  width: 100vw;
+  height: 100vh;
   margin: auto;
-  margin-top: 7.5vh;
+  margin-top: 2em;
   border-radius: 6px;
-  /* box-shadow: 0px 0px 20px #acacac; */
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
 }
+
+
 
 .titlebar {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #ebebeb, color-stop(1.0, #d5d5d5)));
@@ -40,7 +61,7 @@ span {
   line-height: 20px;
   text-align: center;
   width: 100%;
-  height: 20px;
+  height: 3em;
   border-top: 1px solid #f3f1f3;
   border-bottom: 1px solid #b1aeb1;
   border-top-left-radius: 6px;
@@ -53,12 +74,12 @@ span {
   cursor: default;
 }
 
-.buttons {
-  padding-left: 8px;
-  padding-top: 3px;
-  float: left;
-  line-height: 0px;
-}
+/*.buttons {*/
+/*  padding-left: 8px;*/
+/*  padding-top: 3px;*/
+/*  float: left;*/
+/*  line-height: 0px;*/
+/*}*/
 
 .buttons:hover a {
   visibility: visible;
@@ -166,8 +187,771 @@ h3 {
   bottom: 0;
   margin-right: 5px;
   margin-bottom: 5px;
+  box-shadow: none !important; 
+  text-decoration: none; 
+  color:black
 }  
+
+
+
+
+canvas{
+  display:block;
+
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+	background: #fff
+}
+
+.text {
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%,-50%);
+	color: #fff;
+	max-width: 90%;
+	padding: 2em 3em;
+	background: rgba(0, 0, 0, 0.7);
+	text-shadow: 0px 0px 2px #131415;
+  font-family: 'Libre Baskerville', serif;
+	text-align: center;
+	border-radius: .4em;
+}
+
+h1 {
+	font-size: 3.25em;
+	/*font-weight: 700;*/
+	letter-spacing: -1px;
+}
+h2 {
+	font-size: 2.25em;
+	/*font-weight: 700;*/
+	letter-spacing: -1px;
+}
+
+.front-p {
+  font-size: 1.5em;
+  font-weight:300;
+  
+}
+
+.front_h1 {
+  font-size: 4em;
+  margin: 0;
+  font-family: 'Nixie One', serif;
+}
+
+.front_h2 {
+  margin-top: 0;
+}
+
+.generate-poem-btn {
+  margin: 0; 
+  box-shadow: none !important; 
+  text-decoration: none; 
+  color:black
+}
+
+
+
+
+
+#exit {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  color:white;
+  
+}
+/*////////////////////////////////////////////////////////////////
+About*/
+
+
+#about-btn {
+  box-shadow: none !important; 
+  text-decoration: none; 
+  color:black; 
+  margin-left: 1.5em;
+}
+#exit_about {
+  box-shadow: none !important; 
+  text-decoration: none; 
+  color:white; 
+  margin-left:2em; 
+  margin-top:1em;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
 
 .window {
   position: relative;
 }
+
+.about {
+  text-align: center;
+}
+
+.about-h1 {
+  padding: 0.5em;
+  font-size: 4em;
+  border-bottom:2px solid White;
+  font-family: 'Nixie One', serif;
+  
+}
+
+.about-h2 {
+  margin-top: 1em;
+  font-family: 'Nixie One', serif;
+
+}
+
+
+.about_content{
+
+  /*margin: auto;*/
+  margin-top: 2em;
+  margin-left: 2em;
+  margin-right: 2em;
+  border-radius: 6px;
+  /*box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
+  text-align: left;
+  font-size: 1em;
+  line-height: 1.75;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.about-window {
+    overflow: hidden;
+
+}
+
+.about-head-container {
+  margin-left: 2em;
+  margin-right: 2em;
+  
+}
+
+
+#typedtext {
+  line-height: 150%;
+  margin-left: 5%;
+}
+
+
+
+/*/////////Nav/////////////*/
+
+a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+a:hover
+{
+  color: tomato;
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #232323;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+
+.aboutNav span {
+  
+  background:#fff !important;
+  
+  
+}
+
+
+/*//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////*/
+
+
+
+
+
+
+/*/////////////////////////////////////////////////////////////////*/
+
+/*Desktop Layout Sizes (Can range from 960-1140 depending on your layout.)*/
+@media only screen and (min-width:1025px) {
+
+  
+  .window {
+
+  width: 100vw;
+  height: 100vh;
+  margin-top:0;
+
+}
+/*//////////////////////////////////////////////////////////////
+/hamberger/////////////////////////////////////////////////////////////*/  
+  
+#menuToggle
+{
+  top: 0.75em;
+  left: 0.75em;
+
+}
+
+nav{
+  float:left;
+}
+
+#outputTitle {
+    position: absolute;
+    left: 40%;
+    font-size: 1.25em;
+    top: 1%;
+
+}
+
+/*//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////*/
+
+.about_content{
+  box-shadow:none;
+  text-align: left;
+  margin-top: 30px;
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.about-window {
+  overflow: scroll ;
+
+  width: 100vw;
+  height: 100vh;
+  margin-top:0;
+}
+}
+/*Tablet (Landscape)*/
+@media only screen and (min-width:769px) and (max-width:1024px) {
+  
+  
+      #about-btn{
+    margin-top: 1em;
+    margin-left:0;
+  }
+  .generate-poem-btn {
+    margin-right:0;
+  }
+  
+  .window {
+
+  width: 100vw;
+  height: 100vh;
+  margin-top:0;
+
+}
+/*//////////////////////////////////////////////////////////////
+/hamberger/////////////////////////////////////////////////////////////*/  
+  
+#menuToggle
+{
+  top: 0.75em;
+  left: 0.75em;
+
+}
+
+nav{
+  float:left;
+}
+
+#outputTitle {
+    position: absolute;
+    left: 40%;
+    font-size: 1.25em;
+    top: 1%;
+
+}
+
+/*//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////*/
+
+.about_content{
+  box-shadow:none;
+  text-align: left;
+  margin-top: 30px;
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.about-window {
+  overflow: scroll ;
+
+  width: 100vw;
+  height: 100vh;
+  margin-top:0;
+}
+}
+/*Tablet (Portrait)*/
+@media only screen and (min-width:581px) and (max-width:768px) {
+    #about-btn{
+    margin-top: 1em;
+    margin-left:0;
+  }
+  .generate-poem-btn {
+    margin-right:0;
+  }
+  
+  .window {
+
+  width: 100vw;
+  height: 100vh;
+  margin-top:0;
+
+}
+/*//////////////////////////////////////////////////////////////
+/hamberger/////////////////////////////////////////////////////////////*/  
+  
+#menuToggle
+{
+  top: 0.75em;
+  left: 0.75em;
+
+}
+
+nav{
+  float:left;
+}
+
+#outputTitle {
+    position: absolute;
+    left: 40%;
+    font-size: 1.25em;
+    top: 1%;
+
+}
+
+/*//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////*/
+
+.about_content{
+  box-shadow:none;
+  text-align: left;
+  margin-top: 30px;
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.about-window {
+  overflow: scroll ;
+
+  width: 100vw;
+  height: 100vh;
+  margin-top:0;
+}
+
+  
+  
+}
+/*Phone (Landscape)*/
+@media only screen and (min-width:321px) and (max-width:580px) {
+  
+  #typedtext {
+  line-height: 150%;
+  margin-left: 1%;
+}
+
+
+
+/*//////////////////////////////////////////////////////////////
+/hamberger/////////////////////////////////////////////////////////////*/  
+  
+#menuToggle
+{
+  top: 0.75em;
+  left: 0.75em;
+
+}
+
+
+
+nav{
+  float:left;
+}
+
+#outputTitle {
+    position: absolute;
+    left: 27%;
+    font-size: 1.25em;
+    top: 1%;
+
+}
+
+
+
+
+/*//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////*/
+
+
+  
+#about-btn{
+  margin-top: 1em;
+  margin-left:0;
+  }
+  .generate-poem-btn {
+    margin-right:0;
+  }
+  
+.front-p {
+  font-size: 1em;
+  font-weight:300;
+  
+}
+
+.front_h1 {
+  font-size: 3em;
+  margin: 0;
+  font-family: 'Nixie One', serif;
+}
+
+.front_h2 {
+  margin-top: 0;
+   font-size: 2em;
+  
+}
+.window {
+
+  width: 100vw;
+  height: 100vh;
+  margin-top:0;
+
+}
+
+/*//////////////////////////
+About*/
+
+.about-h1 {
+  padding: 0.25em;
+  font-size: 2.5em;
+  border-bottom:2px solid White;
+  font-family: 'Nixie One', serif;
+  
+}
+
+.about-h2 {
+  margin-top: 1em;
+  font-family: 'Nixie One', serif;
+
+}
+
+
+.about_content{
+  box-shadow:none;
+  text-align: left;
+  margin-top: 30px;
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.about-window {
+  overflow: scroll ;
+
+  width: 100vw;
+  height: 100vh;
+  margin-top:0;
+}
+
+.about-head-container {
+  margin-left: 1em;
+  margin-right: 1em;;
+  
+}
+
+/*//////////////////////////////////*/
+#new_poem_btn {
+  display:none;
+
+}  
+
+#exit_about {
+  display:none;
+
+}
+
+
+
+}
+
+
+
+/*Typical Phone (Portrait)*/
+@media only screen and (max-width:320px) {
+  
+  #typedtext {
+  line-height: 150%;
+  margin-left: 1%;
+}
+  
+  
+/*//////////////////////////////////////////////////////////////
+/hamberger/////////////////////////////////////////////////////////////*/  
+  
+#menuToggle
+{
+  top: 0.75em;
+  left: 0.75em;
+
+}
+
+nav{
+  float:left;
+}
+
+#outputTitle {
+    position: absolute;
+    left: 20%;
+    font-size: 1.25em;
+    top: 1%;
+
+}
+
+
+
+/*//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////*/
+  
+  #about-btn{
+    margin-top: 1em;
+    margin-left:0;
+  }
+  .generate-poem-btn {
+    margin-right:0;
+  }
+  
+.front-p {
+  font-size: 1em;
+  font-weight:300;
+  
+}
+
+.front_h1 {
+  font-size: 3em;
+  margin: 0;
+  font-family: 'Nixie One', serif;
+}
+
+.front_h2 {
+  margin-top: 0;
+   font-size: 2em;
+}
+
+.window {
+
+  width: 100vw;
+  height: 100vh;
+  margin-top:0;
+  border-radius: 0;
+}
+
+.titlebar {
+  border-radius: 0;
+} 
+
+/*//////////////////////////
+About*/
+
+.about-h1 {
+  padding: 0.25em;
+  padding-bottom:0.5em;
+  font-size: 2em;
+  border-bottom:2px solid White;
+  font-family: 'Nixie One', serif;
+  
+}
+
+.about-h2 {
+  margin-top: 1em;
+  font-size: 1.5em;
+  font-family: 'Nixie One', serif;
+
+}
+
+
+.about_content{
+  box-shadow:none;
+  text-align: left;
+  margin-top: 30px;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: 'Libre Baskerville', serif;
+  overflow-wrap: break-word;
+}
+
+.about-window {
+  overflow: scroll ;
+
+  width: 100vw;
+  height: 100vh;
+  margin-top:0;
+}
+
+.about-head-container {
+  margin-left: 1em;
+  margin-right: 1em;;
+  
+}
+
+/*//////////////////////////////////*/
+
+
+#new_poem_btn {
+  display:none;
+
+}  
+
+#exit_about {
+  display:none;
+
+}
+
+}
+
+
+  

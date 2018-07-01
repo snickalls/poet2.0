@@ -12,31 +12,47 @@
 </head>
 
 <body>
-
+  
 
   <div class="window">
-    <button type="button" class="btn btn-light" id="new_poem_btn"><a style="box-shadow: none !important; text-decoration: none; color:black" href="/display">New Poem</a></button>
+    <!--<button type="button" class="btn btn-light" id="new_poem_btn" style="box-shadow: none !important; text-decoration: none; color:black" onClick="javascript: window.location='/display'">New Poem</button>-->
+    <!--<button type="button" class="btn btn-dark" id="exit" onClick="javascript: window.location='/'">Exit Poet 2.0</button>-->
 
 
     <div class="titlebar">
 
-      Poet 2.0 Output Window
+      <p id="outputTitle">Poet 2.0 Output Window</p>
       <!-- window title -->
+             <nav role="navigation">
+            <div id="menuToggle" class="displaySpan">
+              <input type="checkbox" />
+              
+              <span></span>
+              <span></span>
+              <span></span>
+              
+              <ul id="menu">
+                <a href="/"><li>Poet 2.0 home</li></a>
+                <a href="/display"><li>Generate Poem</li></a>
+                <a href="/about"><li>About Poet 2.0</li></a>
+              </ul>
+            </div>
+          </nav>
     </div>
         
     <div class="content">
+      
               <div id="typedtext"></div>
       <!-- window content -->
 
-    </div>
-  </div>
 
 
+ </div>
 
 </body>
 <script>
 setTimeout(function(){
-  document.location = document.referrer}
+  document.location = window.history.back()}
 ,120000)
 </script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">  </script>

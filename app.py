@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-from nocache import nocache
 import datetime
 import os
 import random
@@ -18,12 +17,22 @@ app = Flask(__name__)
 
 
 @app.route('/')
-@nocache
+
 def index():
     return render_template('index.html')
+    
+#######################################################
+
+@app.route('/about')
+
+def about():
+    return render_template('about.html')
+    
+    
+#######################################################
 
 @app.route('/display')
-@nocache
+
 
 def display():
 
@@ -174,12 +183,7 @@ def display():
                         if isgood:
                             poem3.append(random.choice(puncuation))
                             capitalize = True
-            # noPunc = True
-            # for punc in list(set(puncuation)):
-            #     if punc in word:
-            #         noPunc = False
-            # if noPunc:
-            #     poem3.append(random.choice(puncuation))
+
 
             newPoem = " ".join(poem3)
 

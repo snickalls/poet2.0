@@ -12,61 +12,66 @@
 </head>
 
 <body>
-
+  
 
   <div class="window">
-    <button type="button" class="btn btn-light" id="new_poem_btn"><a style="box-shadow: none !important; text-decoration: none; color:black" href="/display">New Poem</a></button>
+    <!--<button type="button" class="btn btn-light" id="new_poem_btn" style="box-shadow: none !important; text-decoration: none; color:black" onClick="javascript: window.location='/display'">New Poem</button>-->
+    <!--<button type="button" class="btn btn-dark" id="exit" onClick="javascript: window.location='/'">Exit Poet 2.0</button>-->
 
 
     <div class="titlebar">
 
-      Poet 2.0 Output Window
+      <p id="outputTitle">Poet 2.0 Output Window</p>
       <!-- window title -->
+             <nav role="navigation">
+            <div id="menuToggle" class="displaySpan">
+              <input type="checkbox" />
+              
+              <span></span>
+              <span></span>
+              <span></span>
+              
+              <ul id="menu">
+                <a href="/"><li>Poet 2.0 home</li></a>
+                <a href="/display"><li>Generate Poem</li></a>
+                <a href="/about"><li>About Poet 2.0</li></a>
+              </ul>
+            </div>
+          </nav>
     </div>
         
     <div class="content">
+      
               <div id="typedtext"></div>
       <!-- window content -->
 
-    </div>
-  </div>
 
 
+ </div>
 
 </body>
 <script>
 setTimeout(function(){
-  document.location = document.referrer}
+  document.location = window.history.back()}
 ,120000)
 </script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">  </script>
 
 
 <script>// set up text to print, each item in array is new line
-var aText = new Array("Proof Of Fluidic Abstraction  ",
+var aText = new Array("In The Middle Of Of Time And Tiger  ",
 "  ",
 " ",
-" An odor has responded outside the grape,   ",
-" a mixture of phlegm and body, a rescuing   ",
-" faucet that brings fear.   ",
-" Like deaths entangling with echoes.   ",
-" I'm the daughter to the root of immediate coat.   ",
-" With its forceful grow what is this language but a memory froze of its mists?  ",
-"  ",
-" Next to the compounding graves.   ",
-" There ought to be a defender of a solute perfume inheriting in a university.  ",
-"  ",
-" Continued and then grew in the modern office.   ",
-" For cluster was dilute and morally positive.   ",
-" There ought to be a mane of a rosy nature entertaining in a field.  ",
-"  ",
-" The reasons for my respect   ",
-" are flew in my eyeball of emerald.",
+" With its frightened light a loaf of bread baked with atrocious happiness and salt.   ",
+" I could enrich darkness, convict, and darkness   ",
+" from quilts and schools   ",
+" with a opaque brimstone curtain   ",
+" with cold fires in my brain.",
 );
-var iSpeed = 50; // time delay of print out
+var iSpeed = 30; // time delay of print out
 var iIndex = 0; // start printing array at this posision
 var iArrLength = aText[0].length; // the length of the text array
-var iScrollAt = 30; // start scrolling up at this many lines
+var iScrollAt = 25; // start scrolling up at this many lines
 
 var iTextPos = 0; // initialise text position
 var sContents = ''; // initialise contents variable
