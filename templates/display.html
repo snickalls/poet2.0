@@ -58,24 +58,36 @@ setTimeout(function(){
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">  </script>
 
 
-<script>// set up text to print, each item in array is new line
-var aText = new Array("The Point Of View Has Not Plagued The Promise  ",
-"  ",
-" ",
-" The order of the stones went loved in vein some preserve but I blush your ash like sphere.   ",
-" The astronaut smiles at the god   ",
-" but the son does not smile   ",
-" when he looks at the ostrich son   ",
-" and the chaotic ocean.  ",
-"  ",
-" As soon as the incoming affections   ",
-" gives the individual indication. Wave of wave of honeysuckles rolling down the sea.   ",
-" Our new praise, our delicate leaf quadrangles.   ",
-" I am smeared by grace and dagger, by thorn tree and sunshine.  ",
-"  ",
-" The I in railroad track a square behind a circle,   ",
-" the demonic workings of free law.",
-);
+<script>
+
+// Replaces all instances of the given substring.
+String.prototype.replaceAll = function( 
+    strTarget, // The substring you want to replace
+    strSubString // The string you want to replace in.
+    ){
+    var strText = this;
+    var intIndexOfMatch = strText.indexOf( strTarget );
+    
+    // Keep looping while an instance of the target string
+    // still exists in the string.
+    while (intIndexOfMatch != -1){
+        // Relace out the current instance.
+        strText = strText.replace( strTarget, strSubString )
+        
+        // Get the index of any next matching substring.
+        intIndexOfMatch = strText.indexOf( strTarget );
+    }
+    
+    // Return the updated string with ALL the target strings
+    // replaced out with the new substring.
+    return( strText );
+}
+
+
+
+// set up text to print, each item in array is new line
+// var aText = new Array("{{poem}}", );
+var aText = "{{poem}}";
 var iSpeed = 30; // time delay of print out
 var iIndex = 0; // start printing array at this posision
 var iArrLength = aText[0].length; // the length of the text array
@@ -85,27 +97,51 @@ var iTextPos = 0; // initialise text position
 var sContents = ''; // initialise contents variable
 var iRow; // initialise current row
 
+
+
 function typewriter()
 {
  sContents =  ' ';
  iRow = Math.max(0, iIndex-iScrollAt);
+ 
  var destination = document.getElementById("typedtext");
+ 
+ 
+ 
+
+var removeANSII = aText.replaceAll("&#39;", "");
+var reLeft = removeANSII.replaceAll("[", "");
+var reRight = reLeft.replaceAll("]", "");
+var reComma = reRight.replaceAll(",", "");
+
+
+
+var newText = reComma.split("\n");
+
+
 
  while ( iRow < iIndex ) {
-  sContents += aText[iRow++] + '<br />';
+  sContents += newText[iRow++] + '<br />';
  }
- destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+ 
+ 
+ 
+ destination.innerHTML = sContents + newText[iIndex].substring(0, iTextPos) + "_";
+
+ 
  if ( iTextPos++ == iArrLength ) {
   iTextPos = 0;
   iIndex++;
-  if ( iIndex != aText.length ) {
-   iArrLength = aText[iIndex].length;
-   setTimeout("typewriter()", 500);
+  if ( iIndex != newText.length ) {
+  iArrLength = newText[iIndex].length;
+  setTimeout("typewriter()", 500);
   }
  } else {
   setTimeout("typewriter()", iSpeed);
  }
 }
+
+
 
 
 typewriter();
