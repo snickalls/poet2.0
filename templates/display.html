@@ -113,10 +113,10 @@ var removeANSII = aText.replaceAll("&#39;", "");
 var reLeft = removeANSII.replaceAll("[", "");
 var reRight = reLeft.replaceAll("]", "");
 var reComma = reRight.replaceAll(",", "");
+var reSpeech = reComma.replaceAll("\"", "");
 
 
-
-var newText = reComma.split("\n");
+var newText = reSpeech.split("\n");
 
 
 
